@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 export default function PlaceholderPage() {
   const location = useLocation();
-  const pageName = location.pathname.replace('/', '') || 'home';
+  const pageName = location.pathname.replace("/", "") || "home";
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -15,11 +15,13 @@ export default function PlaceholderPage() {
             {pageName.charAt(0).toUpperCase() + pageName.slice(1)} Page
           </h1>
           <p className="text-gray-600 mb-6">
-            This page is currently a placeholder. Continue prompting to fill in the content for this page.
+            This page is currently a placeholder. Continue prompting to fill in
+            the content for this page.
           </p>
           <div className="bg-golden-light rounded-lg p-4">
             <p className="text-sm text-gray-700">
-              <strong>Next steps:</strong> Ask me to implement the specific content and functionality for this page.
+              <strong>Next steps:</strong> Ask me to implement the specific
+              content and functionality for this page.
             </p>
           </div>
         </div>

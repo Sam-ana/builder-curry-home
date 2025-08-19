@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { User, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { User, Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle registration logic here
-    console.log('Registration attempt:', formData);
+    console.log("Registration attempt:", formData);
   };
 
   return (
@@ -28,8 +28,12 @@ export default function Register() {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-semibold text-gray-900 mb-2">Register</h1>
-            <p className="text-gray-600">Please enter your Name, Login and your Password</p>
+            <h1 className="text-3xl font-semibold text-gray-900 mb-2">
+              Register
+            </h1>
+            <p className="text-gray-600">
+              Please enter your Name, Login and your Password
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -42,7 +46,9 @@ export default function Register() {
                 type="text"
                 placeholder="Username"
                 value={formData.username}
-                onChange={(e) => setFormData({...formData, username: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, username: e.target.value })
+                }
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent"
                 required
               />
@@ -57,7 +63,9 @@ export default function Register() {
                 type="email"
                 placeholder="Email"
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent"
                 required
               />
@@ -72,7 +80,9 @@ export default function Register() {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
                 className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent"
                 required
               />
@@ -98,7 +108,9 @@ export default function Register() {
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Re-enter Password"
                 value={formData.confirmPassword}
-                onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, confirmPassword: e.target.value })
+                }
                 className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-golden focus:border-transparent"
                 required
               />
@@ -128,8 +140,8 @@ export default function Register() {
 
             {/* Already have account link */}
             <div className="text-center">
-              <Link 
-                to="/login" 
+              <Link
+                to="/login"
                 className="w-full block bg-golden-light hover:bg-golden text-golden-foreground font-medium py-3 px-4 rounded-lg transition-colors"
               >
                 Already have an Account?
